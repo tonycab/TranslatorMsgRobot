@@ -1,0 +1,45 @@
+﻿<Window x:Class="TranslatorMsgRobot.Vue.WindowEditTranslator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TranslatorMsgRobot.Vue"
+        mc:Ignorable="d"
+        Title="DeepL configuration"
+        ResizeMode="NoResize"
+        Height="Auto"
+        SizeToContent="WidthAndHeight"
+        Width="400">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition  Height="40"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="groupBox"
+                  Header="DeepL API Key"
+                  Grid.Row="0">
+            <Grid Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="textBox"
+                         Text="{Binding Path=ApiKey}"
+                         Width="Auto"
+                         Margin="5,5,5,5"
+                         Padding=" 5"
+                         MinWidth="200" />
+
+            </Grid>
+        </GroupBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="5,5,5,5" >
+            <Button Content="OK"
+                    Margin="5"
+                    Width="50" Click="OkButton_Click"/>
+            <Button Content="CANCEL"
+                    Margin="5" Width="50" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
