@@ -224,6 +224,7 @@ namespace TranslatorMsgRobot.ViewModel
         private async void TranslatFileMessages()
         {
             IEnumerable<Message> messages;
+            
 
             //Si un fichier de traduction existe on ajoute les nouveaux messages
             if (TargetFileMessages != null)
@@ -242,6 +243,8 @@ namespace TranslatorMsgRobot.ViewModel
 
             //Traduction des messages
             TargetFileMessages = new FichierMessagesRobot();
+            TargetFileMessages.LangageFile = SelectedLangage;
+
             foreach (var message in messages)
             {
                 //Traduction du message qui n'ont pas été personnalisé
